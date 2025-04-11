@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Portfólio Premium | Fotógrafo, Designer & Dev</title>
+    <link rel="shortcut icon" href="LogoDesigner - favicon.png" type="image/x-icon">
+    <link rel="stylesheet" href="style.css">
+
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+
+</head>
+<style>
+    :root{
+         --font-family: 'Lexend', sans-serif;
+        --font-path: 'fonts/';
+    }
+</style>
+<body>
+    <!-- Navbar -->
+    <nav>
+        <a href="#home" class="logo">
+            <img src="LogoDesigner2.png" alt="SEU NOME" class="logo-img" data-theme-light="assets/logo-light.png"
+                data-theme-dark="LogoDesigner.png">
+        </a>
+        <div class="menu">
+            <a href="#home" class="nav-link active"><i class="fas fa-home"></i> Home</a>
+            <a href="#servicos" class="nav-link"><i class="fas fa-code"></i> Serviços</a>
+            <a href="#sobre" class="nav-link"><i class="fas fa-user"></i> Sobre</a>
+            <a href="#contactos" class="nav-link"><i class="fas fa-envelope"></i> Contactos</a>
+            <button id="dark-mode-toggle"><i class="fas fa-moon"></i></button>
+        </div>
+        <button class="hamburger"><i class="fas fa-bars"></i></button>
+    </nav>
+    <div class="background-container">
+        <img src="assets/bg-desktop.jpg" alt="" class="bg-desktop">
+        <img src="assets/bg-mobile.jpg" alt="" class="bg-mobile">
+    </div>
+    <!-- Conteúdo Principal (SPA) -->
+    <main id="app">
+        <!-- Home -->
+        <section id="home" class="page active">
+            <div class="hero">
+                <h1 data-aos="fade-up">Crio <span>Experiências</span> Visuais & Digitais</h1>
+                <p data-aos="fade-up" data-aos-delay="200">Fotografia • Design Gráfico • Desenvolvimento Web</p>
+                <a href="#servicos" class="btn" data-aos="fade-up" data-aos-delay="400">Explorar Projetos</a>
+            </div>
+        </section>
+        <!-- Dentro do <main id="app"> -->
+        <section id="colecao" class="page">
+            <div class="container">
+                <button id="voltar" class="btn"><i class="fas fa-arrow-left"></i> Voltar</button>
+                <h2 id="titulo-colecao">Coleção Completa</h2>
+                <div class="colecao-grid"></div>
+            </div>
+        </section>
+        <!-- Serviços -->
+        <section id="servicos" class="page">
+            <div class="container">
+                <h2 data-aos="fade-down">O Que <span>Ofereço</span></h2>
+                <div class="servicos-buttons" data-aos="fade-down">
+                    <button class="servico-btn active" data-category="fotografia"><i class="fas fa-camera"></i>
+                        Fotografia</button>
+                    <button class="servico-btn" data-category="design"><i class="fas fa-paint-brush"></i>
+                        Design</button>
+                    <button class="servico-btn" data-category="programacao"><i class="fas fa-laptop-code"></i>
+                        Programação</button>
+                </div>
+                <div class="projetos-grid" data-aos="fade-up">
+                    <!-- Projetos carregados via JavaScript -->
+                </div>
+            </div>
+        </section>
+
+        <!-- Sobre -->
+        <section id="sobre" class="page">
+            <div class="container">
+                <div class="about-content">
+                    <div class="about-img" data-aos="fade-right">
+                        <img src="images/me.jpg" alt="Sua Foto">
+                    </div>
+                    <div class="about-text" data-aos="fade-left">
+                        <h2>Sobre <span>Mim</span></h2>
+                        <p>Sou um criativo multidisciplinar com expertise em fotografia, design e desenvolvimento web.
+                            Minha abordagem combina sensibilidade artística com soluções técnicas precisas.</p>
+                        <div class="skills">
+                            <span><i class="fab fa-html5"></i> HTML/CSS</span>
+                            <span><i class="fab fa-js"></i> JavaScript</span>
+                            <span><i class="fab fa-figma"></i> UI/UX</span>
+                            <span><i class="fas fa-camera"  ></i> Fotografia</span>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- Contactos -->
+        <section id="contactos" class="page">
+            <div class="container">
+                <h2 data-aos="fade-down">Vamos <span>Trabalhar</span> Juntos?</h2>
+                <form data-aos="fade-up">
+                    <input type="text" placeholder="Seu Nome" required>
+                    <input type="email" placeholder="Seu Email" required>
+                    <textarea placeholder="Sua Mensagem"></textarea>
+                    <button type="submit" class="btn">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+                </form>
+            </div>
+        </section>
+    </main>
+
+    <!-- Footer -->
+    <footer>
+        <div class="social-links">
+            <!--  <a href="#"><i class="fab fa-behance"></i></a>-->
+            <a href="https://github.com/Pain-Dzn"><i class="fab fa-github"></i></a>
+            <a href="https://www.instagram.com/pain_designer_29/"><i class="fab fa-instagram"></i></a>
+            <a href="https://www.linkedin.com/in/pain-designer-4404572b9/"><i class="fab fa-linkedin"></i></a>
+        </div>
+        <p>&copy; 2024 Seu Nome. Todos os direitos reservados.</p>
+    </footer>
+
+    <!-- Scripts -->
+    <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
+    <script src="script.js"></script>
+    <script>
+        AOS.init({ duration: 800 });
+    </script>
+</body>
+
+</html>
