@@ -1,35 +1,54 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 
- 
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Portfólio Premium | Fotógrafo, Designer & Dev</title>
     <link rel="shortcut icon" href="LogoDesigner - favicon.png" type="image/x-icon">
-    <link rel="stylesheet" href="style.css">
-<link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
 
+    <!-- Pré-conexão para melhor performance -->
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link rel="preconnect" href="https://cdnjs.cloudflare.com">
+
+    <!-- Fontes e ícones -->
+    <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
 
-<style> :root {
+    <!-- CSS -->
+    <link rel="stylesheet" href="style.css">
+
+    <style>
+        :root {
             --font-family: 'Lexend', sans-serif;
             --font-path: 'fonts/';
         }
-        
-        html, body, * {
-            font-family: var(--font-family) !important;
-            font-display: swap; /* Melhora a renderização enquanto a fonte carrega */
-        }
-</style>
 
-</head>  
+        html,
+        body,
+        * {
+            font-family: var(--font-family) !important;
+            font-display: swap;
+        }
+
+        /* Garante que os ícones Font Awesome sejam exibidos */
+        .fa,
+        .fas {
+            font-family: 'Font Awesome 6 Free' !important;
+        }
+
+        .fab {
+            font-family: 'Font Awesome 6 Brands' !important;
+        }
+    </style>
+</head>
+
 <body>
     <!-- Navbar -->
     <nav>
         <a href="#home" class="logo">
-            <img src="LogoDesigner2.png" alt="SEU NOME" class="logo-img" data-theme-light="assets/logo-light.png"
+            <img src="LogoDesigner2.png" alt="PAIN DESIGNER" class="logo-img" data-theme-light="LogoDesigner2.png"
                 data-theme-dark="LogoDesigner.png">
         </a>
         <div class="menu">
@@ -41,10 +60,12 @@
         </div>
         <button class="hamburger"><i class="fas fa-bars"></i></button>
     </nav>
+
     <div class="background-container">
         <img src="assets/bg-desktop.jpg" alt="" class="bg-desktop">
         <img src="assets/bg-mobile.jpg" alt="" class="bg-mobile">
     </div>
+
     <!-- Conteúdo Principal (SPA) -->
     <main id="app">
         <!-- Home -->
@@ -55,7 +76,8 @@
                 <a href="#servicos" class="btn" data-aos="fade-up" data-aos-delay="400">Explorar Projetos</a>
             </div>
         </section>
-        <!-- Dentro do <main id="app"> -->
+
+        <!-- Coleção -->
         <section id="colecao" class="page">
             <div class="container">
                 <button id="voltar" class="btn"><i class="fas fa-arrow-left"></i> Voltar</button>
@@ -63,6 +85,7 @@
                 <div class="colecao-grid"></div>
             </div>
         </section>
+
         <!-- Serviços -->
         <section id="servicos" class="page">
             <div class="container">
@@ -98,24 +121,17 @@
                             <span><i class="fab fa-figma"></i> UI/UX</span>
                             <span><i class="fas fa-camera"></i> Fotografia</span>
                         </div>
+                        <!--  -->
+                        <div class="baixar-cv-container" style="margin-top: 2rem; text-align: center;">
+                            <a href="Edson Magaia - CV.pdf" download class="btn-download-cv"
+                                style="background: #222; color: #fff; padding: 0.75rem 2rem; border-radius: 6px; display: inline-block; text-decoration: none; font-weight: 700; transition: background 0.2s;"
+                                onmouseover="this.style.background='#333';" onmouseout="this.style.background='#222';"
+                                <i class="fas fa-download"></i> Baixar CV
+                            </a>
+                            </a>
+                        </div>
                     </div>
                 </div>
-            </div>-
-            <div class="baixar-cv-container" style="margin-top: 2rem; text-align: center;">
-                <a href="Edson Magaia - CV.pdf" download style="
-                    display: inline-block;
-                    background: #222;
-                    color: #fff;
-                    padding: 0.75rem 2rem;
-                    border-radius: 30px;
-                    font-family: var(--font-family, sans-serif);
-                    font-size: 1.1rem;
-                    text-decoration: none;
-                    box-shadow: 0 2px 8px rgba(0,0,0,0.08);
-                    transition: background 0.2s, color 0.2s;
-                " onmouseover="this.style.background='#444';" onmouseout="this.style.background='#222';">
-                    <i class="fas fa-download" style="margin-right: 8px;"></i> Baixar CV
-                </a>
             </div>
         </section>
 
@@ -132,11 +148,10 @@
             </div>
         </section>
     </main>
- 
-    <!-- Footer  nigga-->
+
+    <!-- Footer -->
     <footer>
         <div class="social-links">
-            <!--  <a href="#"><i class="fab fa-behance"></i></a>-->
             <a href="https://github.com/Pain-Dzn"><i class="fab fa-github"></i></a>
             <a href="https://www.instagram.com/pain_designer_29/"><i class="fab fa-instagram"></i></a>
             <a href="https://www.linkedin.com/in/pain-designer-4404572b9/"><i class="fab fa-linkedin"></i></a>
@@ -148,7 +163,20 @@
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>
-        AOS.init({ duration: 800 });
+        // Inicializa AOS após o carregamento completo da página
+        document.addEventListener('DOMContentLoaded', function () {
+            AOS.init({
+                duration: 800,
+                once: true
+            });
+
+            // Verifica se as fontes foram carregadas
+            document.fonts.ready.then(function () {
+                console.log('Fontes carregadas com sucesso');
+            }).catch(function (err) {
+                console.error('Erro ao carregar fontes:', err);
+            });
+        });
     </script>
 </body>
 
