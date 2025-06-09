@@ -7,7 +7,6 @@
     <title>Portfólio Premium | Fotógrafo, Designer & Dev</title>
     <link rel="shortcut icon" href="LogoDesigner - favicon.png" type="image/x-icon">
 
-    <!-- Pré-conexão para melhor performance -->
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link rel="preconnect" href="https://cdnjs.cloudflare.com">
@@ -43,6 +42,46 @@
         }
     </style>
 </head>
+<style>
+    #dark-mode-toggle {
+        background: none;
+        border: 1.5px solid rgb(0, 155, 225);
+        color: rgb(0, 155, 225);
+        font-size: 1rem;
+        cursor: pointer;
+        transition: color 0.2s, border-color 0.2s, background 0.2s;
+        margin-left: 1rem;
+        outline: none;
+        border-radius: 6px;
+        padding: 0.3rem 0.6rem;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+    }
+
+    #dark-mode-toggle:focus,
+    #dark-mode-toggle:hover {
+        color: rgb(0, 155, 225);
+        border-color: rgb(0, 155, 225);
+        background: rgba(0, 155, 225, 0.07);
+    }
+
+    #dark-mode-toggle i {
+        font-size: 1rem;
+    }
+
+    body.dark-mode #dark-mode-toggle {
+        color: #fff;
+        border-color: #fff;
+        background: rgba(255, 255, 255, 0.03);
+    }
+
+    body.dark-mode #dark-mode-toggle:hover {
+        color: rgb(0, 155, 225);
+        border-color: rgb(0, 155, 225);
+        background: rgba(0, 155, 225, 0.12);
+    }
+</style>
 
 <body>
     <!-- Navbar -->
