@@ -14,7 +14,7 @@
     <!-- Fontes e ícones -->
     <link href="https://fonts.googleapis.com/css2?family=Lexend:wght@400;700&display=swap" rel="stylesheet">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
-
+    <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="style.css">
 
@@ -173,53 +173,7 @@
                 </div>
             </div>
         </section>
-        <!-- Contactos -->
-        <!-- Envio de Email Real com Validação -->
-        <!-- Adiciona o script do EmailJS -->
-        <script src="https://cdn.jsdelivr.net/npm/emailjs-com@3/dist/email.min.js"></script>
-        <script>
-            document.addEventListener('DOMContentLoaded', function () {
-                // Inicializa o EmailJS com seu user ID
-                emailjs.init('YOUR_USER_ID');
-                const form = document.querySelector('#contactos form');
-                form.addEventListener('submit', async function (e) {
-                    e.preventDefault();
 
-                    const nome = form.querySelector('input[type="text"]').value.trim();
-                    const email = form.querySelector('input[type="email"]').value.trim();
-                    const mensagem = form.querySelector('textarea').value.trim();
-
-                    // Validação básica de campos
-                    if (!nome || !email || !mensagem) {
-                        alert('Por favor, preencha todos os campos antes de enviar sua mensagem.');
-                        return;
-                    }
-
-                    // Validação de formato de email
-                    const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
-                    if (!emailRegex.test(email)) {
-                        alert('Por favor, insira um endereço de email válido.');
-                        return;
-                    }
-
-                    // Envio do email (usando EmailJS)
-                    try {
-                        await emailjs.send('YOUR_SERVICE_ID', 'YOUR_TEMPLATE_ID', {
-                            from_name: nome,
-                            from_email: email,
-                            message: mensagem,
-                            to_email: 'edsonpain29@gmail.com' // Email fixo para onde será enviado
-                        }, 'YOUR_USER_ID');
-
-                        form.reset();
-                        alert('Sua mensagem foi enviada com sucesso! Obrigado pelo contato. Em breve retornarei para conversarmos melhor sobre seu projeto ou dúvida.');
-                    } catch (err) {
-                        console.error('Erro no envio:', err);
-                        alert('Ocorreu um erro ao enviar sua mensagem. Por favor, tente novamente mais tarde ou entre em contato diretamente por edsonpain29@gmail.com');
-                    }
-                });
-            });
-        </script>
         <div class="phone-contacts-container">
 
 
@@ -420,12 +374,13 @@
                         </div>
                     </div>
 
-                    <!-- Formulário de contacto -->
                     <form data-aos="fade-up" class="contact-form">
-                        <input type="text" placeholder="Seu Nome" required>
-                        <input type="email" placeholder="Seu Email" required>
-                        <textarea placeholder="Sua Mensagem"></textarea>
+                        <input type="text" id="contact-name" placeholder="Seu Nome" required>
+                        <input type="email" id="contact-email" placeholder="Seu Email" required>
+                        <textarea id="contact-message" placeholder="Sua Mensagem (mínimo 10 palavras)"
+                            required></textarea>
                         <button type="submit" class="btn">Enviar Mensagem <i class="fas fa-paper-plane"></i></button>
+                        <div class="form-feedback"></div>
                     </form>
                 </div>
                 <style>
@@ -491,6 +446,27 @@
                         background: #fff;
                         color: rgb(0, 155, 225);
                     }
+
+                    .form-feedback {
+                        margin-top: 1rem;
+                        padding: 0.75rem;
+                        border-radius: 6px;
+                        display: none;
+                    }
+
+                    .form-feedback.success {
+                        display: block;
+                        background: rgba(40, 167, 69, 0.2);
+                        color: #28a745;
+                        border: 1px solid #28a745;
+                    }
+
+                    .form-feedback.error {
+                        display: block;
+                        background: rgba(220, 53, 69, 0.2);
+                        color: #dc3545;
+                        border: 1px solid #dc3545;
+                    }
                 </style>
             </section>
     </main>
@@ -506,6 +482,70 @@
     </footer>
 
     <!-- Scripts -->
+    <script>
+        document.addEventListener('DOMContentLoaded', function () {
+            // Inicializa o EmailJS (substitua com seu User ID)
+            emailjs.init('KcGBJFXyB45BO2XFK');
+
+            const contactForm = document.querySelector('.contact-form');
+            const feedbackEl = document.querySelector('.form-feedback');
+
+            contactForm.addEventListener('submit', function (e) {
+                e.preventDefault();
+
+                // Reset feedback
+                feedbackEl.className = 'form-feedback';
+                feedbackEl.textContent = '';
+
+                // Obter valores
+                const from_name = document.getElementById('contact-name').value.trim();
+                const from_email = document.getElementById('contact-email').value.trim();
+                const message = document.getElementById('contact-message').value.trim();
+                const time = new Date().toLocaleTimeString('pt-BR', { hour: '2-digit', minute: '2-digit' });
+
+                // Validações
+                if (!from_name || !from_email || !message) {
+                    showFeedback('Por favor, preencha todos os campos.', 'error');
+                    return;
+                }
+
+                // Validar email
+                const emailRegex = /^[^\s@]+@[^\s@]+\.[^\s@]+$/;
+                if (!emailRegex.test(from_email)) {
+                    showFeedback('Por favor, insira um endereço de email válido.', 'error');
+                    return;
+                }
+
+                // Validar número de palavras
+                const wordCount = message.split(/\s+/).filter(word => word.length > 0).length;
+                if (wordCount < 10) {
+                    showFeedback('A mensagem deve conter no mínimo 10 palavras.', 'error');
+                    return;
+                }
+
+                // Enviar email
+                emailjs.send('emailpaindzn', 'template_jcll2mb', {
+                    from_name: from_name,
+                    from_email: from_email,
+                    message: message,
+                    time: time,
+                    to_email: 'edsonpain29@gmail.com' // Seu email de recebimento
+                })
+                    .then(function () {
+                        showFeedback('Mensagem enviada com sucesso! Entrarei em contato em breve.', 'success');
+                        contactForm.reset();
+                    }, function (error) {
+                        console.error('Erro ao enviar:', error);
+                        showFeedback('Ocorreu um erro ao enviar. Erro: ' + error.text, 'error');
+                    });
+            });
+
+            function showFeedback(message, type) {
+                feedbackEl.textContent = message;
+                feedbackEl.classList.add(type);
+            }
+        });
+    </script>
     <script src="https://unpkg.com/aos@2.3.1/dist/aos.js"></script>
     <script src="script.js"></script>
     <script>
@@ -524,6 +564,7 @@
             });
         });
     </script>
+
 </body>
 
 </html>
