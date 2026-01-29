@@ -1,0 +1,50 @@
+<svg width="1920" height="1080" viewBox="0 0 1920 1080" xmlns="http://www.w3.org/2000/svg">
+    <!-- Fundo -->
+    <rect width="1920" height="1080" fill="url(#bg-gradient-light)"/>
+    
+    <!-- Gradiente -->
+    <defs>
+        <linearGradient id="bg-gradient-light" x1="0%" y1="0%" x2="100%" y2="100%">
+            <stop offset="0%" stop-color="#f8f9fa" stop-opacity="1"/>
+            <stop offset="50%" stop-color="#e9ecef" stop-opacity="1"/>
+            <stop offset="100%" stop-color="#dee2e6" stop-opacity="1"/>
+        </linearGradient>
+        
+        <!-- Padrão de grid -->
+        <pattern id="grid-pattern" x="0" y="0" width="80" height="80" patternUnits="userSpaceOnUse">
+            <path d="M 80 0 L 0 0 0 80" fill="none" stroke="rgba(0, 155, 225, 0.08)" stroke-width="1"/>
+        </pattern>
+        
+        <!-- Padrão de código -->
+        <pattern id="code-pattern" x="0" y="0" width="200" height="200" patternUnits="userSpaceOnUse">
+            <text x="10" y="30" font-family="monospace" font-size="12" fill="rgba(0, 0, 0, 0.05)">{</text>
+            <text x="20" y="50" font-family="monospace" font-size="12" fill="rgba(0, 0, 0, 0.05)">code: "creative",</text>
+            <text x="20" y="70" font-family="monospace" font-size="12" fill="rgba(0, 0, 0, 0.05)">design: "visual",</text>
+            <text x="20" y="90" font-family="monospace" font-size="12" fill="rgba(0, 0, 0, 0.05)">photo: "art"</text>
+            <text x="10" y="110" font-family="monospace" font-size="12" fill="rgba(0, 0, 0, 0.05)">}</text>
+        </pattern>
+    </defs>
+    
+    <!-- Elementos visuais sutis -->
+    <!-- Grid (design) -->
+    <rect width="1920" height="1080" fill="url(#grid-pattern)" opacity="0.3"/>
+    
+    <!-- Código (programação) -->
+    <rect width="1920" height="1080" fill="url(#code-pattern)" opacity="0.2"/>
+    
+    <!-- Linhas diagonais (fotografia) -->
+    <g opacity="0.15">
+        <line x1="0" y1="0" x2="1920" y2="1080" stroke="rgb(0, 155, 225)" stroke-width="1"/>
+        <line x1="0" y1="200" x2="1720" y2="1080" stroke="rgb(0, 155, 225)" stroke-width="1"/>
+        <line x1="0" y1="400" x2="1520" y2="1080" stroke="rgb(0, 155, 225)" stroke-width="1"/>
+    </g>
+    
+    <!-- Pontos/círculos (design) -->
+    <circle cx="300" cy="300" r="40" fill="rgba(255, 107, 107, 0.05)"/>
+    <circle cx="1500" cy="400" r="60" fill="rgba(76, 175, 80, 0.05)"/>
+    <circle cx="800" cy="800" r="50" fill="rgba(0, 155, 225, 0.05)"/>
+    
+    <!-- Retângulos (interface) -->
+    <rect x="1200" y="200" width="200" height="120" fill="rgba(255, 152, 0, 0.05)" rx="10"/>
+    <rect x="400" y="600" width="180" height="100" fill="rgba(156, 39, 176, 0.05)" rx="8"/>
+</svg>

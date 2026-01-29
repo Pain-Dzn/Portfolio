@@ -1,0 +1,10 @@
+1 - Mudar highlight  no hover do botão no HOME
+2 - Add milhasstudioweb 
+3 - Add Khaiya
+4 - TIckit
+5 - Reduzir tamanho de fotografias
+6 - colocar background hibrido para os 2 temas
+7 - Mudar fotos da categoria de fotografia
+8 - Change skills
+9 - Deixar HOME mais dinamico
+10 - Ah, fuck. Update de todo css

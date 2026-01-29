@@ -524,3 +524,8 @@ footer {
         display: block;
     }
 }
+
+.btn-repo,
+.btn-ver {
+    font-size: small !important;
+}

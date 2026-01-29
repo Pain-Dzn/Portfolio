@@ -1,4 +1,4 @@
-// Dados dos Projetos (COMPLETO)
+// Dados dos Projetos  
 const projetos = {
     fotografia: [
         {
@@ -13,12 +13,12 @@ const projetos = {
             ]
         },
         {
-            title: "Paisagens Naturais",
+            title: "Paisagens",
             desc: "Cenários de tirar o fôlego ao redor do mundo",
-            img: "assets/projetos/fotografia/ceu.jpg",
-            tags: ["Natureza", "Viagem"],
+            img: "assets/projetos/fotografia/build.jpg",
+            tags: ["Arquitetura  ", "Viagem"],
             colecao: [
-                "assets/projetos/fotografia/ceu.jpg",
+                "assets/projetos/fotografia/city.jpg",
                 "assets/projetos/fotografia/ceu2.jpg",
                 "assets/projetos/fotografia/ceu3.jpg"
             ]
@@ -38,55 +38,50 @@ const projetos = {
     design: [
         {
             title: "Identidade Visual",
-            desc: "Branding para marca da Loja UEM",
-            img: "assets/projetos/design/LojaUEM.png",
+            desc: "Branding para marca CECOMA UEM",
+            img: "assets/projetos/design/image2.png",
             tags: ["Logo", "Branding"],
             colecao: [
-                "assets/projetos/design/lojauem.png",
-                "assets/projetos/design/mockup-UEM",
-                "assets/projetos/design/mockup-UEM2.jpg"
+                "assets/projetos/design/image1.png",
+                "assets/projetos/design/image3.png",
             ]
         },
         {
-            title: "App Mobile",
-            desc: "UI/UX para aplicativo de fitness",
-            img: "assets/projetos/design/app-fitness.jpg",
+            title: "Loja Gaming",
+            desc: "Material gráfico para a loja G-STORE",
+            img: "assets/projetos/design/sticker.jpg",
             tags: ["UI Design", "Figma"],
             colecao: [
-                "assets/projetos/design/app-fitness.jpg",
-                "assets/projetos/design/screen1.jpg",
-                "assets/projetos/design/screen2.jpg"
+                "assets/projetos/design/sticker.jpg",
+                "assets/projetos/design/1.jpg",
+                "assets/projetos/design/5.jpg"
             ]
         },
-        {
-            title: "Packaging",
-            desc: "Design de embalagem para vinho premium",
-            img: "assets/projetos/design/vinho.jpg",
-            tags: ["Embalagem", "Tipografia"],
-            colecao: [
-                "assets/projetos/design/vinho.jpg",
-                "assets/projetos/design/vinho-mockup1.jpg",
-                "assets/projetos/design/vinho-mockup2.jpg"
-            ]
-        }
+        /*  {
+              title: "Packaging",
+              desc: "Design de embalagem para vinho premium",
+              img: "assets/projetos/design/vinho.jpg",
+              tags: ["Embalagem", "Tipografia"],
+              colecao: [
+                  "assets/projetos/design/vinho.jpg",
+                  "assets/projetos/design/vinho-mockup1.jpg",
+                  "assets/projetos/design/vinho-mockup2.jpg"
+              ]
+          }**/
     ],
     programacao: [
         {
-            title: "E-commerce React",
-            desc: "Loja virtual com pagamento integrado",
-            img: "assets/projetos/programacao/loja-uem.png",
+            title: "Venda de bilhetes para enventos online",
+            desc: "Platarforma de venda de bilhetes com pagamento integrado",
+            img: "assets/projetos/programacao/tickit.png",
             tags: ["React", " PHP"],
             colecao: [
                 {
-                    thumb: "assets/projetos/programacao/loja-uem.png",
-                    url: "http://127.0.0.1:5500/index.html#home",
-                    repo: "https://github.com/"
-                },
-                {
-                    thumb: "assets/projetos/programacao/ecommerce-admin.jpg",
-                    url: "https:// ",
-                    repo: "https://github.com/seuusuario/ecommerce-admin"
+                    thumb: "assets/projetos/programacao/tickit.png",
+                    url: "https://tickit-mz.vercel.app/",
+                    repo: "https://github.com/Pain-Dzn/TickIt"
                 }
+
             ]
         },
         {
@@ -103,20 +98,17 @@ const projetos = {
             ]
         },
         {
-            title: "Dashboard Analytics",
-            desc: "Visualização de dados em tempo real",
-            img: "assets/projetos/programacao/dashboard.jpg",
-            tags: ["D3.js", "API"],
+            title: "Agendamento de sessões fotográficas",
+            desc: "Prataforma para agendamento de sessões fotográficas de um estúdio",
+            img: "assets/projetos/programacao/image.png",
+            tags: ["PHP  ", "  React JS  ", "API"],
             colecao: [
                 {
-                    thumb: "assets/projetos/programacao/dashboard-thumb.jpg",
-                    url: "https://dashboard-exemplo.com",
-                    repo: "https://github.com/seuusuario/dashboard"
+                    thumb: "assets/projetos/programacao/image.png",
+                    url: "https://milhasstudio.com/",
+                    repo: "https://github.com/"
                 },
-                {
-                    thumb: "assets/projetos/programacao/dashboard-mobile.jpg",
-                    url: "https://dashboard-exemplo.com/mobile"
-                }
+
             ]
         }
     ]
@@ -170,7 +162,7 @@ function loadProjects(category) {
             </div>
         `;
     });
-}// ... (mantenha todo o código anterior até a função loadColecao)
+}
 
 function loadColecao(category, projectIndex) {
     const projeto = projetos[category][projectIndex];
@@ -189,7 +181,7 @@ function loadColecao(category, projectIndex) {
                 <div class="colecao-item code-item">
                     <img src="${item.thumb || item}" alt="${projeto.title}">
                     <div class="code-actions">
-                        <a href="${item.url}" target="_blank" class="btn">
+                        <a href="${item.url}" target="_blank" class="btn btn-ver">
                             <i class="fas fa-external-link-alt"></i> Ver Projeto
                         </a>
                         ${item.repo ? `
